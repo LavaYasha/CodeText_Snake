@@ -1,0 +1,10 @@
+C:\Projects\ProjectsC#\Max\bin\Debug\Max.exe.config
+C:\Projects\ProjectsC#\Max\bin\Debug\Max.exe
+C:\Projects\ProjectsC#\Max\bin\Debug\Max.pdb
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.csprojAssemblyReference.cache
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.Form1.resources
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.Properties.Resources.resources
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.csproj.GenerateResource.cache
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.csproj.CoreCompileInputs.cache
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.exe
+C:\Projects\ProjectsC#\Max\obj\Debug\Max.pdb
