@@ -41,12 +41,19 @@
             this.uLD = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.DebugText = new System.Windows.Forms.RichTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // uLR
             // 
             this.uLR.AutoSize = true;
-            this.uLR.Location = new System.Drawing.Point(12, 12);
+            this.uLR.Location = new System.Drawing.Point(12, 36);
             this.uLR.Name = "uLR";
             this.uLR.Size = new System.Drawing.Size(142, 17);
             this.uLR.TabIndex = 0;
@@ -57,7 +64,7 @@
             // uRL
             // 
             this.uRL.AutoSize = true;
-            this.uRL.Location = new System.Drawing.Point(12, 35);
+            this.uRL.Location = new System.Drawing.Point(12, 59);
             this.uRL.Name = "uRL";
             this.uRL.Size = new System.Drawing.Size(142, 17);
             this.uRL.TabIndex = 1;
@@ -68,7 +75,7 @@
             // bRL
             // 
             this.bRL.AutoSize = true;
-            this.bRL.Location = new System.Drawing.Point(12, 58);
+            this.bRL.Location = new System.Drawing.Point(12, 82);
             this.bRL.Name = "bRL";
             this.bRL.Size = new System.Drawing.Size(139, 17);
             this.bRL.TabIndex = 3;
@@ -79,7 +86,7 @@
             // bLR
             // 
             this.bLR.AutoSize = true;
-            this.bLR.Location = new System.Drawing.Point(12, 81);
+            this.bLR.Location = new System.Drawing.Point(12, 105);
             this.bLR.Name = "bLR";
             this.bLR.Size = new System.Drawing.Size(139, 17);
             this.bLR.TabIndex = 2;
@@ -117,7 +124,7 @@
             // bRU
             // 
             this.bRU.AutoSize = true;
-            this.bRU.Location = new System.Drawing.Point(160, 58);
+            this.bRU.Location = new System.Drawing.Point(160, 82);
             this.bRU.Name = "bRU";
             this.bRU.Size = new System.Drawing.Size(138, 17);
             this.bRU.TabIndex = 10;
@@ -128,7 +135,7 @@
             // bLU
             // 
             this.bLU.AutoSize = true;
-            this.bLU.Location = new System.Drawing.Point(160, 81);
+            this.bLU.Location = new System.Drawing.Point(160, 105);
             this.bLU.Name = "bLU";
             this.bLU.Size = new System.Drawing.Size(132, 17);
             this.bLU.TabIndex = 9;
@@ -139,7 +146,7 @@
             // uRD
             // 
             this.uRD.AutoSize = true;
-            this.uRD.Location = new System.Drawing.Point(160, 35);
+            this.uRD.Location = new System.Drawing.Point(160, 59);
             this.uRD.Name = "uRD";
             this.uRD.Size = new System.Drawing.Size(136, 17);
             this.uRD.TabIndex = 8;
@@ -150,7 +157,7 @@
             // uLD
             // 
             this.uLD.AutoSize = true;
-            this.uLD.Location = new System.Drawing.Point(160, 12);
+            this.uLD.Location = new System.Drawing.Point(160, 36);
             this.uLD.Name = "uLD";
             this.uLD.Size = new System.Drawing.Size(130, 17);
             this.uLD.TabIndex = 7;
@@ -176,6 +183,43 @@
             this.DebugText.TabIndex = 12;
             this.DebugText.Text = "";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(449, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Text = "file";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,9 +238,13 @@
             this.Controls.Add(this.bLR);
             this.Controls.Add(this.uRL);
             this.Controls.Add(this.uLR);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,6 +265,12 @@
         private System.Windows.Forms.RadioButton uLD;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox DebugText;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

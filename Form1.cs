@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -567,6 +568,35 @@ namespace Max
 
             maxRow = c;
             maxColumn = a;
+        }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel) return;
+            string FName = openFileDialog1.FileName;
+
+            ThisText.Text = "";
+
+            int LengthF = File.ReadAllLines(FName).Length;
+
+            for (int i = 0; i < LengthF; i++)
+            {
+                string temp = File.ReadLines(FName).Skip(i).FirstOrDefault();
+                ThisText.Text += temp;
+            }
+        }
+
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = "Name.txt";
+            save.Filter = "Text File | *.txt";
+
+            if (save.ShowDialog() == DialogResult.Cancel) return;
+            StreamWriter writer = new StreamWriter(save.OpenFile());
+            writer.WriteLine(ThisText.Text);
+            writer.Dispose();
+            writer.Close();
         }
     }
 }
